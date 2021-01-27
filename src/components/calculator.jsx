@@ -71,8 +71,7 @@ export default class Calculator extends React.Component {
     handleCarChange = (car) => {
         this.setState({
             selectedCar: car,
-            fuelConsumption: car.fuelConsumption,
-            hotlapTime: car.hotlapTimeSeconds,
+            fuelConsumption: car.fuelConsumption,            
         }, () => this.calculateFuel())
     }
 

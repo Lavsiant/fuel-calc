@@ -53,3 +53,25 @@
   fill: white;
   background-color: red;
 }
+
+.update-button {
+  left: 10px;
+  top: 3px;
+  display: flex;
+  cursor: pointer
+}
+
+.header-text {
+  font-size: 12px;    
+  letter-spacing: 0.8px;  
+  color: white;
+  text-align: left;
+  
+}
+
+
+.tooltip-text {
+  font-family: HKGrotesk-Regular;
+  font-size: 12px;
+  color: #555555;
+}

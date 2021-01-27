@@ -1,7 +1,21 @@
 {
   "name": "fuel-calc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "public/electron.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lavsiant/fuel-calc.git"
+  },
+  "build": {
+    "appId": "fuel-calc-lavsiant",   
+    "publish": {
+      "provider": "github",
+      "token": ""
+    },
+    "win": {
+      "icon": "./build/1.ico"
+    }
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -9,10 +23,10 @@
     "@testing-library/user-event": "^12.6.2",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
-    "electron": "^11.2.1",
-    "electron-builder": "^22.9.1",
     "electron-is-dev": "^1.2.0",
     "electron-json-storage": "^4.3.0",
+    "electron-log": "^4.3.1",
+    "electron-updater": "^4.3.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -21,14 +35,21 @@
     "wait-on": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "electron-build": "electron-builder",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "release": "yarn react-build && electron-builder --publish=always",
-    "build": "yarn react-build && yarn electron-build",
-    "electron-dev": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "release": "npm run react-build && electron-builder --publish=always",
+    "build": "npm run react-build && npm run electron-build --publish=never",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "sad": "electron-builder --publish=always"
   },
   "eslintConfig": {
     "extends": [

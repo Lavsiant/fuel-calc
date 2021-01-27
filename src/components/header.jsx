@@ -1,8 +1,13 @@
 import React from 'react';
 import '../public/styles/App.css';
 import { ReactComponent as Close } from '../public/img/close2.svg';
+import PropTypes from 'prop-types';
+import { ReactComponent as Update } from '../public/img/update.svg';
 
 const electron = window.require('electron');
+const { ipcRenderer } = electron
+
+
 
 export default class Header extends React.Component {
 
@@ -10,7 +15,7 @@ export default class Header extends React.Component {
         super(props);
 
         this.state = {
-            isCloseHover: false,
+            isCloseHover: false,            
         };
     }
 
@@ -22,10 +27,25 @@ export default class Header extends React.Component {
         electron.remote.BrowserWindow.getFocusedWindow().close();
     }
 
+    startUpdate = () => {
+        this.setState({ isDownloading: true });
+        ipcRenderer.send('update-download');
+    }
+
     render() {
         return (
             <header  className="drag-header">
-                <div ></div>
+                {this.props.isUpdateAvailable ?
+                    <div
+                        onClick={() => this.startUpdate()}
+                        className="header-button update-button"  >
+                        <Update style={{paddingBottom: '5px'}} draggable="false" ></Update>
+                        <div className="header-text" style={{ paddingLeft: 5, paddingTop: 2 }} > 
+                            Update available
+                        </div>
+                    </div>
+                    : null}
+
                 <div style={{ right: 3, width: '28px', height: '28px' }}
                     onMouseEnter={() => this.setState({ isCloseHover: true })}
                     onMouseLeave={() => this.setState({ isCloseHover: false })}
@@ -36,4 +56,8 @@ export default class Header extends React.Component {
             </header>
         );
     }
+}
+
+Header.propTypes = {
+    isUpdateAvailable: PropTypes.bool,
 }
