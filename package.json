@@ -11,11 +11,9 @@
     "publish": {
       "provider": "github",
       "token": ""
-    },
-    "win": {
-      "icon": "./build/1.ico"
     }
   },
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",

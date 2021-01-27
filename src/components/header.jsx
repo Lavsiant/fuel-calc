@@ -27,17 +27,12 @@ export default class Header extends React.Component {
         electron.remote.BrowserWindow.getFocusedWindow().close();
     }
 
-    startUpdate = () => {
-        this.setState({ isDownloading: true });
-        ipcRenderer.send('update-download');
-    }
-
     render() {
         return (
             <header  className="drag-header">
                 {this.props.isUpdateAvailable ?
                     <div
-                        onClick={() => this.startUpdate()}
+                        onClick={() => this.props.startUpdate()}
                         className="header-button update-button"  >
                         <Update style={{paddingBottom: '5px'}} draggable="false" ></Update>
                         <div className="header-text" style={{ paddingLeft: 5, paddingTop: 2 }} > 
@@ -60,4 +55,5 @@ export default class Header extends React.Component {
 
 Header.propTypes = {
     isUpdateAvailable: PropTypes.bool,
+    startUpdate: PropTypes.func
 }

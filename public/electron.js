@@ -17,7 +17,7 @@ autoUpdater.autoDownload = false;
 function createWindow() {
   mainWindow = new BrowserWindow(
     {
-      width: 500,
+      width: 320,
       height: 500,
       resizable: isDev,      
       titleBarStyle: 'hiddenInset', frame: false,
