@@ -1,0 +1,85 @@
+.dropdown-header {
+    /* color:white;
+    padding-top: 3px;
+ 
+    margin-left: 10px;
+    margin-right: 10px; */
+    padding-top: 3px;
+    
+    font-size: 18px;
+
+    font-family: HKGrotesk-Regular;
+    color: rgb(211, 211, 211);
+    font-style: bold;
+    letter-spacing: 0.2px;
+    width: 150px;
+    margin: auto
+}
+
+.container {
+    width: 320px;
+    
+}
+
+.open-hotlap-button {
+    height: 30px;
+    width: 95%;
+    background-color: brown;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.control-container {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 20px;
+  
+}
+
+.text-input {
+    height: 36px;
+    /* text-align: center; */
+    /* color: #A39F98; */
+    width: 147px;
+    /* background-color: white; */
+    border-color: #A39F98;
+    border-radius: 5px;
+    /* font-weight: 900; */
+    /* font-size: 25px; */
+    /* line-height: 20px; */
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    font-family: HKGrotesk-Regular;
+    text-align: center;
+    /* padding-left: 16px; */
+    /* padding-right: 16px; */
+    outline: none;
+}
+
+.final-fuel {
+    height: 30px;
+    text-align: center;
+    color: black;
+    width: 147px;
+    background-color: white;
+    border-color: #A39F98;
+    border-radius: 5px;
+    margin: auto;
+    padding-top: 7px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    font-family: HKGrotesk-Regular;
+    text-align: center;
+}
+
+.control {
+    position: relative;
+    
+    margin: auto;
+}
+
