@@ -1,3 +1,5 @@
+Fuel calculate for Assetto Corsa Competizione
+
 # Install
  npm install
 
