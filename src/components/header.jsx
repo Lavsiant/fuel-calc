@@ -24,7 +24,7 @@ export default class Header extends React.Component {
     }
 
     close = () => {
-        electron.remote.BrowserWindow.getFocusedWindow().close();
+        electron.remote.BrowserWindow.getFocusedWindow().hide();
     }
 
     render() {
